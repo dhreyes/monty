@@ -71,9 +71,8 @@ void (*select_function(char *input))(stack_t **stack, unsigned int line_number)
 		{"pall", pall},
 		{"pint", pint},
 		{"pop", pop},
-		/*{"swap", swap},
-		{"swap", swap},
-		{"add", add},*/
+		/*{"swap", swap},*/
+		{"add", add},
 		{"nop", nop},
 		{NULL, NULL}
 	};
