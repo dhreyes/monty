@@ -12,7 +12,7 @@ void push(stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL)
 	{
-	    node->n = _atoi(node_num_value);
+	    node->n = atoi(node_num_value);
 		node->prev = NULL;
 		node->next = NULL;
 		*stack = node;

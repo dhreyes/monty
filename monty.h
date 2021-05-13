@@ -45,11 +45,6 @@ void freeDoublePointers(char **pointer);
 void (*select_function(char *input))(stack_t **stack, unsigned int line_number);
 void free_nodes(stack_t *head);
 
-/*helper functions file 2*/
-int _atoi(char *s);
-
-
-
 /*instructions functions*/
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
