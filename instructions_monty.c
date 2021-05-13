@@ -19,7 +19,7 @@ void push(stack_t **stack, unsigned int line_number)
 	}
 	else
 	{
-	    node->n = _atoi(node_num_value);
+	    node->n = atoi(node_num_value);
 		node->next = *stack;
 		node->prev = (*stack)->prev;
 		(*stack)->prev = node;
