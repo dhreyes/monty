@@ -79,13 +79,10 @@ void (*select_function(char *input))(stack_t **stack, unsigned int line_number)
 
 	int idx = 0;
 
-	/* Iterates through the array of functions (strings) */
 	while (function[idx].opcode)
 	{
-		/* checks for matching string to input being passed */
 		if (strcmp(input, function[idx].opcode) == 0)
 		{
-			/* Calls matching function paired with string */
 			return (function[idx].f);
 		}
 		idx++;
