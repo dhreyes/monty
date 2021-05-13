@@ -3,11 +3,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <limits.h>
 #include <string.h>
 
 /**
@@ -21,9 +16,9 @@
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+    int n;
+    struct stack_s *prev;
+    struct stack_s *next;
 } stack_t;
 
 /**
@@ -36,23 +31,29 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-void push();
-void pall();
-void pint();
-void pop();
-void swap();
-void add();
-void nop();
-char **tokenizeInput(char *input);
+/*gloval variable that holds number value of inputArr[1]*/
+char *node_num_value;
+
+/*helper functions*/
 int _strlen(char *str);
+char **tokenizeInput(char *input);
 void freeDoublePointers(char **pointer);
 void (*select_function(char *input))(stack_t **stack, unsigned int line_number);
-stack_t *initNode(stack_t *node, stack_t *head, int num);
 void free_nodes(stack_t *head);
+
+/*helper functions file 2*/
+int _atoi(char *s);
+
+
+
+/*instructions functions*/
+void push(stack_t **stack, unsigned int line_number);
+void pall(stack_t **stack, unsigned int line_number);
+void pint(stack_t **stack, unsigned int line_number);
 
 
 #endif
