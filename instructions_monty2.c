@@ -12,11 +12,14 @@ void add(stack_t **stack, unsigned int line_number)
 	if (*stack == NULL)
 	{
 		printf("L%d: can't add, stack too short\n", line_number);
-		exit(EXIT_FAILURE);
+		node_num_value = "ERROR";
 	}
-	temp = (*stack)->next;
-	temp->n += (*stack)->n;
-	pop(stack, line_number);
+	else
+	{
+		temp = (*stack)->next;
+		temp->n += (*stack)->n;
+		pop(stack, line_number);
+	}
 }
 
 /**
@@ -31,10 +34,14 @@ void sub(stack_t **stack, unsigned int line_number)
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
+		node_num_value = "ERROR";
 	}
-	temp = (*stack)->next;
-	temp->n -= (*stack)->n;
-	pop(stack, line_number);
+	else
+	{
+		temp = (*stack)->next;
+		temp->n -= (*stack)->n;
+		pop(stack, line_number);
+	}
 }
 
 /**
@@ -49,10 +56,14 @@ void mul(stack_t **stack, unsigned int line_number)
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
+		node_num_value = "ERROR";
 	}
-	temp = (*stack)->next;
-	temp->n *= (*stack)->n;
-	pop(stack, line_number);
+	else
+	{
+		temp = (*stack)->next;
+		temp->n *= (*stack)->n;
+		pop(stack, line_number);
+	}
 }
 
 /**
@@ -67,14 +78,18 @@ void _div(stack_t **stack, unsigned int line_number)
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
+		node_num_value = "ERROR";
 	}
-	if ((*stack)->n == 0)
+	else
 	{
-		fprintf(stderr, "L%d: division by zero\n", line_number);
+		if ((*stack)->n == 0)
+		{
+			fprintf(stderr, "L%d: division by zero\n", line_number);
+		}
+		temp = (*stack)->next;
+		temp->n = temp->n / (*stack)->n;
+		pop(stack, line_number);
 	}
-	temp = (*stack)->next;
-	temp->n = temp->n / (*stack)->n;
-	pop(stack, line_number);
 }
 
 /**
@@ -90,11 +105,14 @@ void mod(stack_t **stack, unsigned int line_number)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
 	}
-	if ((*stack)->n == 0)
+	else if ((*stack)->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", line_number);
 	}
-	temp = (*stack)->next;
-	temp->n = temp->n % (*stack)->n;
-	pop(stack, line_number);
+	else
+	{
+		temp = (*stack)->next;
+		temp->n = temp->n % (*stack)->n;
+		pop(stack, line_number);
+	}
 }

@@ -45,7 +45,7 @@ int main(int argc, char **argv)
 		}
 		func_ptr(&stack, line_number);
 
-		if (_strcmp(inputArr[0], "push") == 0)
+		if (node_num_value)
 		{
 			if (_strcmp("ERROR", node_num_value) == 0)
 			{
