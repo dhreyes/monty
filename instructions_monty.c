@@ -7,6 +7,14 @@ void push(stack_t **stack, unsigned int line_number)
 	if (line_number == 0)
 		printf("nothing\n");
 
+	if (atoi(node_num_value) == 0)
+	{
+		fprintf(stderr, "L%d: usage: push interger\n", line_number);
+		/*NEED APPPRIATE FREES-> file, inputArr*/
+		free_nodes(*stack);
+		exit(EXIT_FAILURE);
+	}
+
 	node = malloc(sizeof(stack_t));
 		if (node == NULL) printf("malloc failed\n");
 
@@ -43,6 +51,14 @@ void pall(stack_t **stack, unsigned int line_number)
 
 void pint(stack_t **stack, unsigned int line_number)
 {
+	if (*stack == NULL)
+	{
+		fprintf(stderr, "L%i: can't pint, stack empty\n", line_number);
+		/*NEED TO FREE FILE/INPUTARR*/
+		free_nodes(*stack);
+		exit(EXIT_FAILURE);
+	}
+
 	if (line_number != '\0')
 	{
 		printf("%i\n", (*stack)->n);

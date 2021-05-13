@@ -90,8 +90,7 @@ void (*select_function(char *input))(stack_t **stack, unsigned int line_number)
 		}
 		idx++;
 	}
-	printf("L<line_number>: unknown instruction <opcode>\n");
-	exit(EXIT_FAILURE);
+	return (function[idx].f);
 }
 
 /*

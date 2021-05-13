@@ -15,6 +15,12 @@ int main(__attribute__((unused))int argc, char **argv)
 		exit(EXIT_FAILURE);
 	}
 
+	if (argc != 2)
+	{
+		fprintf(stderr, "USAGE: monty file\n");
+		exit(EXIT_FAILURE);
+	}
+
 	while(fgets(input, sizeof(input), fd) != NULL)
 	{
 		lastIndex = (_strlen(input) - 1);
@@ -24,6 +30,14 @@ int main(__attribute__((unused))int argc, char **argv)
 		node_num_value = inputArr[1];
 
 		func_ptr = select_function(inputArr[0]);
+		if (!(func_ptr))
+		{
+			fprintf(stderr, "L%i: unknown instruction %s\n", line_number, inputArr[0]);
+			freeDoublePointers(inputArr);
+			free_nodes(stack);
+			fclose(fd);
+			exit(1);
+		}
 		func_ptr(&stack, line_number);
 
 		freeDoublePointers(inputArr);

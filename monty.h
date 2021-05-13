@@ -35,7 +35,7 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-/*gloval variable that holds number value of inputArr[1]*/
+/*gloval variable that holds value of inputArr[1]*/
 char *node_num_value;
 
 /*helper functions*/
