@@ -9,39 +9,37 @@ void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *node = NULL;
 
-	if (line_number == 0)
-		printf("nothing\n");
+	(void)line_number;
 
-	if (atoi(node_num_value) == 0)
+	if (atoi(node_num_value) == 0 && (strcmp(node_num_value, "0") != 0))
 	{
 		fprintf(stderr, "L%d: usage: push interger\n", line_number);
-		/*NEED APPPRIATE FREES-> file, inputArr*/
-
-		free_nodes(*stack);
-		exit(EXIT_FAILURE);
-	}
-
-	node = malloc(sizeof(stack_t));
-	if (node == NULL)
-	{
-		fprintf(stderr, "Error: malloc failed\n");
-		exit(EXIT_FAILURE);
-	}
-
-	if (*stack == NULL)
-	{
-		node->n = atoi(node_num_value);
-		node->prev = NULL;
-		node->next = NULL;
-		*stack = node;
+		node_num_value = "ERROR";
 	}
 	else
 	{
-		node->n = atoi(node_num_value);
-		node->next = *stack;
-		node->prev = (*stack)->prev;
-		(*stack)->prev = node;
-		*stack = node;
+		node = malloc(sizeof(stack_t));
+		if (node == NULL)
+		{
+			fprintf(stderr, "Error: malloc failed\n");
+			exit(EXIT_FAILURE);
+		}
+
+		if (*stack == NULL)
+		{
+			node->n = atoi(node_num_value);
+			node->prev = NULL;
+			node->next = NULL;
+			*stack = node;
+		}
+		else
+		{
+			node->n = atoi(node_num_value);
+			node->next = *stack;
+			node->prev = (*stack)->prev;
+			(*stack)->prev = node;
+			*stack = node;
+		}
 	}
 }
 

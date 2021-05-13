@@ -1,5 +1,3 @@
 #!/bin/bash
 gcc -Wall -Werror -Wextra -pedantic -g *.c *.h -o monty
 ./monty test_file
-betty *.c
-betty *.h

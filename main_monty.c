@@ -1,5 +1,7 @@
 #include "monty.h"
 
+void inputError(char *inputArr[], stack_t **stack, unsigned int line);
+
 /**
  * main - function reads instructions from a file and creates a stack
  * @argc: counts arguments
@@ -42,6 +44,17 @@ int main(int argc, char **argv)
 			exit(EXIT_FAILURE);
 		}
 		func_ptr(&stack, line_number);
+
+		if (_strcmp(inputArr[0], "push") == 0)
+		{
+			if (_strcmp("ERROR", node_num_value) == 0)
+			{
+				freeDoublePointers(inputArr);
+				free_nodes(stack);
+				fclose(fd);
+				exit(EXIT_FAILURE);
+			}
+		}
 		freeDoublePointers(inputArr);
 		line_number++;
 	}
@@ -61,5 +74,4 @@ void inputError(char *inputArr[], stack_t **stack, unsigned int line)
 	fprintf(stderr, "L%i: unknown instruction %s\n", line, inputArr[0]);
 	freeDoublePointers(inputArr);
 	free_nodes(*stack);
-
 }
