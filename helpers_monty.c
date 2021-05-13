@@ -1,7 +1,9 @@
 #include "monty.h"
 
-/*
- *
+/**
+ * _strlen - function returns the lenght of the string
+ * @str: string passed
+ * Return: length of string
  */
 int _strlen(char *str)
 {
@@ -14,8 +16,10 @@ int _strlen(char *str)
 	return (index);
 }
 
-/*
- *
+/**
+ * tokenizeInput - function tokenizes a string
+ * @input: input to be tokenized
+ * Return: 2D array of tokinized input
  */
 char **tokenizeInput(char *input)
 {
@@ -24,12 +28,16 @@ char **tokenizeInput(char *input)
 	int count = 0;
 
 	inputArr = malloc(sizeof(char *) * 3);
-	if (inputArr == NULL) return NULL;
+	if (inputArr == NULL)
+	{
+		fprintf(stderr, "Error: malloc failed\n");
+		exit(EXIT_FAILURE);
+	}
 
 	hold = strdup(input);
 	temp = strtok(hold, space);
 
-	while ( temp!= NULL)
+	while (temp != NULL)
 	{
 		inputArr[count] = strdup(temp);
 		count++;
@@ -38,11 +46,12 @@ char **tokenizeInput(char *input)
 	inputArr[count] = NULL;
 	free(hold);
 
-	return(inputArr);
+	return (inputArr);
 }
 
-/*
- *
+/**
+ * freeDoublePointers - function fress a 2D array
+ * @pointer: head node
  */
 void freeDoublePointers(char **pointer)
 {
@@ -61,10 +70,12 @@ void freeDoublePointers(char **pointer)
 	free(pointer);
 }
 
-/*
- *
+/**
+ * selectFunction - function assigns appropiate func pointer
+ * @input: string to be compared
+ * Return: func pointer
  */
-void (*select_function(char *input))(stack_t **stack, unsigned int line_number)
+void (*selectFunction(char *input))(stack_t **stack, unsigned int line_number)
 {
 	instruction_t function[] = {
 		{"push", push},
@@ -90,8 +101,9 @@ void (*select_function(char *input))(stack_t **stack, unsigned int line_number)
 	return (function[idx].f);
 }
 
-/*
- *
+/**
+ * free_nodes - function frees a doubly linked list
+ * @head: head node
  */
 void free_nodes(stack_t *head)
 {

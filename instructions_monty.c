@@ -1,5 +1,10 @@
 #include "monty.h"
 
+/**
+ * push - function adds node
+ * @stack: head node
+ * @line_number: line count
+ */
 void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *node = NULL;
@@ -11,23 +16,28 @@ void push(stack_t **stack, unsigned int line_number)
 	{
 		fprintf(stderr, "L%d: usage: push interger\n", line_number);
 		/*NEED APPPRIATE FREES-> file, inputArr*/
+
 		free_nodes(*stack);
 		exit(EXIT_FAILURE);
 	}
 
 	node = malloc(sizeof(stack_t));
-		if (node == NULL) printf("malloc failed\n");
+	if (node == NULL)
+	{
+		fprintf(stderr, "Error: malloc failed\n");
+		exit(EXIT_FAILURE);
+	}
 
 	if (*stack == NULL)
 	{
-	    node->n = atoi(node_num_value);
+		node->n = atoi(node_num_value);
 		node->prev = NULL;
 		node->next = NULL;
 		*stack = node;
 	}
 	else
 	{
-	    node->n = atoi(node_num_value);
+		node->n = atoi(node_num_value);
 		node->next = *stack;
 		node->prev = (*stack)->prev;
 		(*stack)->prev = node;
@@ -35,6 +45,11 @@ void push(stack_t **stack, unsigned int line_number)
 	}
 }
 
+/**
+ * pall - function prints node
+ * @stack: head node
+ * @line_number: line count
+ */
 void pall(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp = *stack;
@@ -49,6 +64,12 @@ void pall(stack_t **stack, unsigned int line_number)
 	}
 }
 
+
+/**
+ * pint - function prints top node
+ * @stack: head node
+ * @line_number: line count
+ */
 void pint(stack_t **stack, unsigned int line_number)
 {
 	if (*stack == NULL)
@@ -65,6 +86,11 @@ void pint(stack_t **stack, unsigned int line_number)
 	}
 }
 
+/**
+ * pop - function removes node
+ * @stack: head node
+ * @line_number: line count
+ */
 void pop(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp = NULL;
@@ -81,8 +107,10 @@ void pop(stack_t **stack, unsigned int line_number)
 	*stack = temp;
 }
 
-/*
- *
+/**
+ * nop - function does nothing
+ * @stack: head node
+ * @line_number: line count
  */
 void nop(stack_t **stack, unsigned int line_number)
 {

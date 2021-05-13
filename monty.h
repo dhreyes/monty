@@ -16,9 +16,9 @@
  */
 typedef struct stack_s
 {
-    int n;
-    struct stack_s *prev;
-    struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 /**
@@ -38,11 +38,14 @@ typedef struct instruction_s
 /*gloval variable that holds value of inputArr[1]*/
 char *node_num_value;
 
+/*main file*/
+void inputError(char *inputArr[], stack_t **stack, unsigned int line);
+
 /*helper functions*/
 int _strlen(char *str);
 char **tokenizeInput(char *input);
 void freeDoublePointers(char **pointer);
-void (*select_function(char *input))(stack_t **stack, unsigned int line_number);
+void (*selectFunction(char *input))(stack_t **stack, unsigned int line_number);
 void free_nodes(stack_t *head);
 
 /*instructions functions*/
@@ -52,5 +55,6 @@ void pint(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
+
 
 #endif
