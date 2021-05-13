@@ -36,7 +36,7 @@ typedef struct instruction_s
 } instruction_t;
 
 /*gloval variable that holds value of inputArr[1]*/
-char *node_num_value;
+extern char *node_num_value;
 
 /*helper functions*/
 int _strlen(char *str);
