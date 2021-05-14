@@ -67,6 +67,6 @@ void mod(stack_t **stack, unsigned int line_number);
 
 /*instrucstion 3*/
 void swap(stack_t **stack, unsigned int line_number);
-
+void pchar(stack_t **stack, unsigned int line_number);
 
 #endif
