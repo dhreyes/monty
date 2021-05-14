@@ -34,10 +34,10 @@ void pstr(stack_t **stack, unsigned int line_number)
 	int number;
 	stack_t *str_candidate = *stack;
 
-	if (*stack == NULL)
+	if (*stack == NULL && (line_number > 0))
 	{
-		fprintf(stderr, "L%d: can't pstr, stack empty\n", line_number);
-		exit(EXIT_FAILURE);
+		printf("\n");
+		return;
 	}
 
 	while (str_candidate)
