@@ -87,6 +87,7 @@ void _div(stack_t **stack, unsigned int line_number)
 		{
 			fprintf(stderr, "L%d: division by zero\n", line_number);
 			node_num_value = "ERROR";
+			return;
 		}
 		temp = (*stack)->next;
 		temp->n = temp->n / (*stack)->n;
