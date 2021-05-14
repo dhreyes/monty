@@ -25,8 +25,7 @@ int _strcmp(char *s1, char *s2)
 
 /**
  * _isdigit - function evaluates wheter c is a number
- * @c: number valued
- *
+ * @str: number valued
  * Return: returns 1 if digit, 0 if otherwise
  */
 int _isdigit(char *str)
@@ -41,4 +40,23 @@ int _isdigit(char *str)
 		}
 	}
 	return (1);
+}
+
+/**
+ * stackLength - function gets lent
+ * @stack: head node
+ * Return: length
+ */
+int stackLength(stack_t *stack)
+{
+	stack_t *temp = stack;
+	int length = 0;
+
+	while (temp != NULL)
+	{
+		length++;
+		printf("length: %d\n", length);
+		temp = temp->next;
+	}
+	return (length);
 }

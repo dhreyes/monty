@@ -1,0 +1,11 @@
+push 1
+pall
+
+
+mul
+pall
+
+push 6
+pall
+
+

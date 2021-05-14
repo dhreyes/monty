@@ -51,6 +51,8 @@ void free_nodes(stack_t *head);
 /*helper2 functions*/
 int _strcmp(char *s1, char *s2);
 int _isdigit(char *str);
+int stackLength(stack_t *stack);
+
 
 /*instructions functions*/
 void push(stack_t **stack, unsigned int line_number);

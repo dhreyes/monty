@@ -52,11 +52,12 @@ void mul(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp;
 
-	if (*stack == NULL)
+	if (stackLength(*stack) < 2)
 	{
-		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
-		exit(EXIT_FAILURE);
+		fprintf(stderr, "L%d: can't mul, stack too short\n", line_number);
+		node_num_value = "ERROR";
 	}
+
 	else
 	{
 		temp = (*stack)->next;
