@@ -59,3 +59,25 @@ int stackLength(stack_t *stack)
 	}
 	return (length);
 }
+
+/**
+ * checkIfComment - functions checks to see if it comments
+ * @input: inptu
+ * Return: 0 if comment
+ */
+int checkIfComment(char *input )
+{
+	int idx = 0;
+
+	for(idx = 0; input[idx] != '\0'; idx++)
+	{
+		while(input[idx] == 32)
+			idx++;
+
+		if (input[idx] == 35)
+			return (0);
+		else
+			break;
+	}
+	return (1);
+}

@@ -37,7 +37,7 @@ char **tokenizeInput(char *input)
 	hold = strdup(input);
 	temp = strtok(hold, space);
 
-	while (temp != NULL)
+	while (temp != NULL && (count < 2))
 	{
 		inputArr[count] = strdup(temp);
 		count++;

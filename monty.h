@@ -52,7 +52,7 @@ void free_nodes(stack_t *head);
 int _strcmp(char *s1, char *s2);
 int _isdigit(char *str);
 int stackLength(stack_t *stack);
-
+int checkIfComment(char *input);
 
 /*instructions functions*/
 void push(stack_t **stack, unsigned int line_number);
