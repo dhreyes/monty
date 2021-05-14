@@ -55,7 +55,6 @@ int stackLength(stack_t *stack)
 	while (temp != NULL)
 	{
 		length++;
-		printf("length: %d\n", length);
 		temp = temp->next;
 	}
 	return (length);
