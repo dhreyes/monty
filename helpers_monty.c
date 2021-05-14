@@ -24,7 +24,7 @@ int _strlen(char *str)
 char **tokenizeInput(char *input)
 {
 	char **inputArr, *temp, *hold;
-	const char *space = " ";
+	const char *space = " \n\t";
 	int count = 0;
 
 	inputArr = malloc(sizeof(char *) * 3);
@@ -85,6 +85,8 @@ void (*selectFunction(char *input))(stack_t **stack, unsigned int line_number)
 		{"swap", swap},
 		{"add", add},
 		{"nop", nop},
+		{"pchar", pchar},
+		{"pstr", pstr},
 		{NULL, NULL}
 	};
 
