@@ -87,6 +87,7 @@ void (*selectFunction(char *input))(stack_t **stack, unsigned int line_number)
 		{"mul", mul},
 		{"sub", sub},
 		{"nop", nop},
+		{"div", _div},
 		{"pchar", pchar},
 		{"pstr", pstr},
 		{NULL, NULL}
