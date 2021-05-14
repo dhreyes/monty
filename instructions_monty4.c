@@ -25,7 +25,7 @@ void pchar(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * pstr - prints the str of the value of the 
+ * pstr - prints the str of the value of the
  * @stack: head of stack
  * @line_number: line count
  */
