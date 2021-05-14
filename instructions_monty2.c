@@ -14,12 +14,11 @@ void add(stack_t **stack, unsigned int line_number)
 		printf("L%d: can't add, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-	else
-	{
-		temp = (*stack)->next;
-		temp->n += (*stack)->n;
-		pop(stack, line_number);
-	}
+
+	temp = (*stack)->next;
+	temp->n += (*stack)->n;
+	pop(stack, line_number);
+
 }
 
 /**
