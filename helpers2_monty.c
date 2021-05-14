@@ -34,6 +34,9 @@ int _isdigit(char *str)
 
 	for (idx = 0; str[idx] != '\0'; idx++)
 	{
+		if ((idx == 0) && (str[idx] == '-'))
+			continue;
+
 		if (str[idx] < 48 || str[idx] > 57)
 		{
 			return (0);
