@@ -10,10 +10,11 @@ void swap(stack_t **stack, unsigned int line_number)
 	stack_t *swap1 = *stack;
 	stack_t *swap2;
 
-	if (stack == NULL || (*stack)->next == NULL)
+	if (stackLength(*stack) < 2)
 	{
 		fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
-		exit(EXIT_FAILURE);
+		node_num_value = "ERROR";
+		return;
 	}
 
 	swap2 = (*stack)->next;
