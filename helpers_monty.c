@@ -85,6 +85,7 @@ void (*selectFunction(char *input))(stack_t **stack, unsigned int line_number)
 		{"swap", swap},
 		{"add", add},
 		{"nop", nop},
+		{"pchar", pchar},
 		{NULL, NULL}
 	};
 
