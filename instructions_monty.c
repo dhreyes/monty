@@ -9,7 +9,6 @@ void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *node = NULL;
 
-	(void)line_number;
 
 	if ((atoi(node_num_value) == 0 && (strcmp(node_num_value, "0") != 0))
 		|| (_isdigit(node_num_value) == 0))
