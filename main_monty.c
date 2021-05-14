@@ -33,7 +33,7 @@ int main(int argc, char **argv)
 		lastIndex = (_strlen(input) - 1);
 		input[lastIndex] = '\0'; /*removed \n char added by fgets*/
 
-		if (_strlen(input) == 0)
+		if ((_strlen(input) == 0) || (input[0] == 35))
 			continue;
 
 		inputArr = tokenizeInput(input);
