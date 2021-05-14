@@ -40,14 +40,15 @@ void pstr(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	while (str_candidate != NULL)
+	while (str_candidate)
 	{
 		number = str_candidate->n;
-		if (number >= 0 && number < 127)
+		if (number <= 0 || number > 127)
 		{
-			printf("%c", number);
-			str_candidate = str_candidate->prev;
+			break;
 		}
+		printf("%c", number);
+		str_candidate = str_candidate->next;
 	}
 	printf("\n");
 }
