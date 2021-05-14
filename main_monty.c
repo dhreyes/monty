@@ -33,6 +33,9 @@ int main(int argc, char **argv)
 		lastIndex = (_strlen(input) - 1);
 		input[lastIndex] = '\0'; /*removed \n char added by fgets*/
 
+		if (_strlen(input) == 0)
+			continue;
+
 		inputArr = tokenizeInput(input);
 		node_num_value = inputArr[1];
 
