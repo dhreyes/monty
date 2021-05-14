@@ -70,8 +70,6 @@ void mod(stack_t **stack, unsigned int line_number);
 
 /*instrucstion 3*/
 void swap(stack_t **stack, unsigned int line_number);
-
-/*instruction 4*/
 void pchar(stack_t **stack, unsigned int line_number);
 void pstr(stack_t **stack, unsigned int line_number);
 
