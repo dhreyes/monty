@@ -22,3 +22,23 @@ int _strcmp(char *s1, char *s2)
 	}
 	return (0);
 }
+
+/**
+ * _isdigit - function evaluates wheter c is a number
+ * @c: number valued
+ *
+ * Return: returns 1 if digit, 0 if otherwise
+ */
+int _isdigit(char *str)
+{
+	int idx;
+
+	for (idx = 0; str[idx] != '\0'; idx++)
+	{
+		if (str[idx] < 48 || str[idx] > 57)
+		{
+			return (0);
+		}
+	}
+	return (1);
+}

@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+#include <ctype.h>
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -50,6 +50,7 @@ void free_nodes(stack_t *head);
 
 /*helper2 functions*/
 int _strcmp(char *s1, char *s2);
+int _isdigit(char *str);
 
 /*instructions functions*/
 void push(stack_t **stack, unsigned int line_number);
