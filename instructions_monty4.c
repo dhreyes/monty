@@ -23,13 +23,3 @@ void pchar(stack_t **stack, unsigned int line_number)
 	}
 	printf("%c\n", number);
 }
-
-/**
- * pstr - prints the str of the value of the 
- * @stack: head of stack
- * @line_number: line count
- */
-void pstr(stack_t **stack, unsigned int line_number)
-{
-	
-}
