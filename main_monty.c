@@ -34,13 +34,23 @@ int main(int argc, char **argv)
 		input[lastIndex] = '\0'; /*removed \n char added by fgets*/
 
 		if ((_strlen(input) == 0) || (checkIfComment(input) == 0))
+		{
+			line_number++;
 			continue;
+		}
 
 		inputArr = tokenizeInput(input);
 		node_num_value = inputArr[1];
 
 		if (strcmp(inputArr[0], "push") == 0 && (inputArr[1]) == NULL)
-			continue;
+		{
+			fprintf(stderr, "L%d: usage: push interger\n", line_number);
+			freeDoublePointers(inputArr);
+			free_nodes(stack);
+			fclose(fd);
+			exit(EXIT_FAILURE);
+
+		}
 
 		func_ptr = selectFunction(inputArr[0]);
 		if (!(func_ptr))
