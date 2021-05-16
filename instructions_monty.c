@@ -13,7 +13,7 @@ void push(stack_t **stack, unsigned int line_number)
 		&& strcmp(node_num_value, "-0") != 0))
 		|| (_isdigit(node_num_value) == 0))
 	{
-		fprintf(stderr, "L%d: usage: push interger\n", line_number);
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		node_num_value = "ERROR";
 	}
 	else
