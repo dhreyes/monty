@@ -39,6 +39,9 @@ int main(int argc, char **argv)
 		inputArr = tokenizeInput(input);
 		node_num_value = inputArr[1];
 
+		if (strcmp(inputArr[0], "push") == 0 && (inputArr[1]) == NULL)
+			continue;
+
 		func_ptr = selectFunction(inputArr[0]);
 		if (!(func_ptr))
 		{
