@@ -11,7 +11,7 @@
 ```
 gcc -Wall -Werror -Wextra -pedantic *.c -o monty
 ```
-#File Descriptions:  
+# File Descriptions:  
   
 • monty.h: Our header file.  
 • helpers_monty.c/herlpers2_monty.c: Helper functions.  
